@@ -1,0 +1,17 @@
+# rust
+/target
+**/*.rs.bk
+Cargo.lock
+
+#java
+.gradle
+build
+
+# IDE
+.idea
+.idea/*
+*.iml
+.vscode
+
+# nodejs
+*/node_modules
