@@ -42,7 +42,7 @@ LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} ./${other_outdir}c_demo)"
 
 # Java
 LOG_INFO_BLUE "Java:"
-javac -d ${other_outdir} ${other_outdir}JavaDemo.java
+javac -d ${other_outdir} ${other_outdir}*.java
 LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} java -cp ${other_outdir} JavaDemo)"
 
 # Python
