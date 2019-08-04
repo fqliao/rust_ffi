@@ -9,7 +9,10 @@ using namespace std;
 int main(int argc, const char* argv[]) {
 
   cout << "add: " << add(1, 2) << endl;
-  cout << "\\ncount_chars: " << count_chars("Hello, World!") << endl;
+
+  char *ptr_str = hello("World");
+  cout << "\\nhello: " << ptr_str << endl;
+  hello_free(ptr_str);
 
   return 0;
 }
