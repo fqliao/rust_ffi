@@ -15,7 +15,8 @@ int main(int argc, const char* argv[])
     hello_free(ptr_str);
 
     Person* person = get_person("Alice", 12);
-    cout << "\\nget_person: {name=\"" << person_get_name(person) << "\", age=" << person_get_age(person) << "}" << endl;
+    cout << "\\nget_person: {name=\"" << person_get_name(person)
+         << "\", age=" << person_get_age(person) << "}" << endl;
     person_free(person);
 
     return 0;
