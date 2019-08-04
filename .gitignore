@@ -3,9 +3,15 @@
 **/*.rs.bk
 Cargo.lock
 
+#C++
+*.o
+*.h
+other_language/c_demo
+
 #java
 .gradle
 build
+*.class
 
 # IDE
 .idea

@@ -34,10 +34,16 @@ other_outdir="other_language/"
 cargo build
 cargo test
 
-# C: compile and execute
-LOG_INFO_BLUE "C:"
-gcc --std=c11 -o ${other_outdir}c_demo ${other_outdir}c_demo.c -L${rust_outdir} -l${rust_cdy}
+# C++: compile and execute
+LOG_INFO_BLUE "C++:"
+g++ -c --std=c++11 ${other_outdir}/c_demo.cpp -o ${other_outdir}/c_demo.o
+g++ --std=c++11 ${other_outdir}/c_demo.o -L${rust_outdir} -l${rust_cdy} -o ${other_outdir}/c_demo
 LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} ./${other_outdir}c_demo)"
+
+# Java
+LOG_INFO_BLUE "Java:"
+javac -d ${other_outdir} ${other_outdir}JavaDemo.java
+LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} java -cp ${other_outdir} JavaDemo)"
 
 # Python
 LOG_INFO_BLUE "Python:"
@@ -46,3 +52,5 @@ LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} python ${other_outdir}python_d
 # Nodejs
 LOG_INFO_BLUE "Nodejs:"
 LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} node ${other_outdir}nodejs_demo.js)"
+
+rm -rf ${rust_outdir}rust-*
