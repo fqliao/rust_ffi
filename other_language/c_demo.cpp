@@ -7,7 +7,9 @@
 using namespace std;
 
 int main(int argc, const char* argv[]) {
-  int sum = add(1, 2);
-  cout << "add: " << sum << endl;
+
+  cout << "add: " << add(1, 2) << endl;
+  cout << "\\ncount_chars: " << count_chars("Hello, World!") << endl;
+
   return 0;
 }
