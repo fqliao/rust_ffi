@@ -29,6 +29,7 @@ function LOG_INFO_BLUE()
 rust_outdir="target/debug/"
 rust_cdy="rust"
 other_outdir="other_language/"
+java_dir="other_language/org/com/fisco/"
 
 # build and test rust
 cargo build
@@ -42,8 +43,8 @@ LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} ./${other_outdir}c_demo)"
 
 # Java
 LOG_INFO_BLUE "Java:"
-javac -d ${other_outdir} ${other_outdir}*.java
-LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} java -cp ${other_outdir} JavaDemo)"
+javac -d ${java_dir} ${java_dir}*.java
+LOG_INFO_ORANGE "$(LD_LIBRARY_PATH=${rust_outdir} java -cp ${java_dir} org.com.fisco.JavaDemo)"
 
 # Python
 LOG_INFO_BLUE "Python:"

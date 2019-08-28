@@ -1,3 +1,5 @@
+package org.com.fisco;
+
 public class Person {
     // field must be public for rust
     private String name;

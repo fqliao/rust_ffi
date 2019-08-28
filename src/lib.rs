@@ -95,12 +95,12 @@ pub extern  "C" fn person_free(ptr: *mut Person) {
 
 /// rust for java
 #[no_mangle]
-pub extern "system" fn Java_JavaDemo_add(_env: JNIEnv, _class: JClass, a: jint, b: jint) -> jint {
+pub extern "system" fn Java_org_com_fisco_JavaDemo_add(_env: JNIEnv, _class: JClass, a: jint, b: jint) -> jint {
     rust_add(a, b)
 }
 
 #[no_mangle]
-pub extern "system" fn Java_JavaDemo_hello(_env: JNIEnv, _class: JClass, str: JString) -> jstring {
+pub extern "system" fn Java_org_com_fisco_JavaDemo_hello(_env: JNIEnv, _class: JClass, str: JString) -> jstring {
     // transfer jString to rust String
     let r_str: String = _env
         .get_string(str)
@@ -115,7 +115,7 @@ pub extern "system" fn Java_JavaDemo_hello(_env: JNIEnv, _class: JClass, str: JS
 }
 
 #[no_mangle]
-pub extern "system" fn Java_JavaDemo_getPerson(
+pub extern "system" fn Java_org_com_fisco_JavaDemo_getPerson(
     _env: JNIEnv,
     _class: JClass,
     name: JString, // java string parameter must be JString
@@ -134,7 +134,7 @@ pub extern "system" fn Java_JavaDemo_getPerson(
 
     //2. find java class
     let person_class = _env
-        .find_class("LPerson;")
+        .find_class("Lorg/com/fisco/Person;")
         .expect("could not find Person class");
 
     //3. allocate java object
